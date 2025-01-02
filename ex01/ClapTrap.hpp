@@ -6,7 +6,7 @@
 /*   By: pabad-ap <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 18:58:34 by pabad-ap          #+#    #+#             */
-/*   Updated: 2024/12/30 19:34:23 by pabad-ap         ###   ########.fr       */
+/*   Updated: 2025/01/02 10:39:01 by pabad-ap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class ClapTrap
 		void		setHitPoints( int amount );
 		void		setEnergy( int amount );
 		void		setAttackDamage( int amount );
-	private:
+	protected:
 		std::string	_name;
 		unsigned int	_hit_points;
 		unsigned int	_energy;
