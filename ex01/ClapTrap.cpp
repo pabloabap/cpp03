@@ -55,16 +55,16 @@ ClapTrap &ClapTrap::operator=( ClapTrap const &src)
 void	ClapTrap::attack( const std::string& target )
 {
 	if ( this->_hit_points == 0 )
-		std::cout << "ClapTrap " << this->_name \
+		std::cout << "ClapTrap - " << this->_name \
 			<< " can't attack, no hit points available" 
 			<< std::endl;
 	else if ( this->_energy == 0 )
-		std::cout << "ClapTrap " << this->_name \
+		std::cout << "ClapTrap - " << this->_name \
 			<< " can't attack, no energy available" 
 			<< std::endl;
 	else
 	{
-		std::cout << "ClapTrap " << this->_name \
+		std::cout << "ClapTrap - " << this->_name \
 			<< " attack " << target << ", causing " 
 			<< this->_attack_damage << " points of damage!"
 			<< std::endl;
@@ -97,20 +97,19 @@ void	ClapTrap::takeDamage( unsigned int amount )
 void 	ClapTrap::beRepaired( unsigned int amount)
 {
 	if ( this->_hit_points == 0 )
-		std::cout << "ClapTrap " << this->_name \
-			<< " can't be repaired, no hit points available" 
+		std::cout << this->_name \
+			<< " can't be repaired, no hit points available"
 			<< std::endl;
 	else if ( this->_energy == 0 )
-		std::cout << "ClapTrap " << this->_name \
+		std::cout << this->_name \
 			<< " can't be repaired, no energy available" 
 			<< std::endl;
 	else
 	{
 		this->_hit_points += amount;
-		std::cout << "ClapTrap " << this->_name \
-			<< " repaired " << amount << " hit points. " 
-			<< "Current hit point: " << this->_hit_points
-			<< std::endl;
+		std::cout << this->_name << " repaired " << amount 
+			<< " hit points. " << "Current hit point: " 
+			<< this->_hit_points<< std::endl;
 		this->_energy--;
 	}
 }

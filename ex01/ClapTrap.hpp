@@ -21,11 +21,11 @@ class ClapTrap
 		ClapTrap(void); //Default constructor
 		ClapTrap(std::string name);
 		ClapTrap( ClapTrap const & src ); //Copy constructor
-		~ClapTrap(void); //Default destructor
+		virtual	~ClapTrap(void); //Default destructor
 
 		ClapTrap &operator=( ClapTrap const &src); //Copy assignment operator.
 		
-		void		attack( const std::string& target );
+		virtual void	attack( const std::string& target );
 		void		takeDamage( unsigned int amount );
 		void 		beRepaired( unsigned int amount);
 

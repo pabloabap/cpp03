@@ -10,21 +10,60 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include "ScravTrap.hpp"
 
-#include "ClapTrap.hpp"
+static void	genericFunctions( ClapTrap *robot );
+static void	scravFunctions( ScravTrap *robot );
 
 int main (void) 
 {
-	ClapTrap a("McGregor");
-	ClapTrap b("Topuria");
-	
-	a.setAttackDamage(1);
-	b.setAttackDamage(2);
-	for (int i = 0; i < 11; i++)
+	ClapTrap *robots[3];
+	robots[0] = new ClapTrap("Clapton");
+	robots[1] = new ScravTrap("Scravton");
+	ScravTrap *eli = dynamic_cast<ScravTrap*>(robots[1]);
+	robots[2] = new ScravTrap(*eli);
+	for (int i = 0; i < 3; i++)
 	{
-		b.attack("McGregor");
-		a.takeDamage(b.getAttackDamage());
-		a.beRepaired(1);
+		std::cout << "\n------------------------------\n" << std::endl;
+		genericFunctions(robots[i]);
 	}
+	std::cout << "\n------------------------------\n" << std::endl;
+	for (int i = 1; i < 3; i++)
+	{
+		std::cout << "\n------------------------------\n" << std::endl;
+		scravFunctions(dynamic_cast<ScravTrap*>(robots[i]));
+	}
+	std::cout << "\n------------------------------\n" << std::endl;
+	delete robots[0];
+	delete robots[1];
+	delete robots[2];
 	return (0);
 }
+
+static void	genericFunctions( ClapTrap *robot )
+{
+	std::cout << "___ROBOT DESCRIPTION___" << std::endl;
+	std::cout << "|- Name: " << robot->getName() << std::endl;
+	std::cout << "|- Hit points: " << robot->getHitPoints() << std::endl;
+	std::cout << "|- Energy: " << robot->getEnergy() << std::endl;
+	std::cout << "|- Attack Damage: " << robot->getAttackDamage() << std::endl;
+	std::cout << "---Robot actions---" << std::endl;
+	robot->attack("noone");
+	robot->takeDamage( 1 );
+	robot->beRepaired( 1 );
+}
+
+static void	scravFunctions( ScravTrap *robot )
+{
+	std::cout << "___SCRAVTRAP INVOCATIONS___" << std::endl;
+	std::cout << "|- Name: " << robot->getName() << std::endl;
+	robot->guardGate();
+	robot->attack("noone");
+	robot->takeDamage( 1 );
+	robot->beRepaired( 1 );
+	std::cout << "|- Hit points: " << robot->getHitPoints() << std::endl;
+	std::cout << "|- Energy: " << robot->getEnergy() << std::endl;
+	std::cout << "|- Attack Damage: " << robot->getAttackDamage() << std::endl;
+}
+

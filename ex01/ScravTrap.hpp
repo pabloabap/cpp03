@@ -25,7 +25,7 @@ class ScravTrap: public ClapTrap
 		~ScravTrap(void); //Default destructor
 
 		ScravTrap &operator=( ScravTrap const &src); //Copy assignment operator.
-		
+			
 		void		attack( const std::string& target );
 		void		guardGate( void );
 };

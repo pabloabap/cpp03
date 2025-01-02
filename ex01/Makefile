@@ -10,12 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= ClapTrap
+NAME		= ScravTrap
 CPP		= c++
 CPP_FLAGS	= -Wall -Wextra -Werror -std=c++98
 
-HEADERS		= ClapTrap.hpp
-SRC		= main.cpp ClapTrap.cpp
+HEADERS		= ClapTrap.hpp ScravTrap.hpp
+SRC		= main.cpp ClapTrap.cpp ScravTrap.cpp
 OBJ		= $(SRC:.cpp=.o)
 
 all: $(NAME)
