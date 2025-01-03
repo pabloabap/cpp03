@@ -6,7 +6,7 @@
 /*   By: pabad-ap <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 20:26:06 by pabad-ap          #+#    #+#             */
-/*   Updated: 2025/01/02 13:32:24 by pabad-ap         ###   ########.fr       */
+/*   Updated: 2025/01/03 08:26:09 by pabad-ap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ void	ScravTrap::attack( const std::string& target )
 
 void	ScravTrap::guardGate( void )
 {
-	std::cout << "ScravTrap is now in Gate keeper mode" << std::endl;
+	std::cout << "ScravTrap - " << this->_name 
+		<< " is now in Gate keeper mode" << std::endl;
 }

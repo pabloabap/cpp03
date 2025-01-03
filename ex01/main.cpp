@@ -6,7 +6,7 @@
 /*   By: pabad-ap <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 18:58:41 by pabad-ap          #+#    #+#             */
-/*   Updated: 2024/12/30 19:46:59 by pabad-ap         ###   ########.fr       */
+/*   Updated: 2025/01/03 08:23:41 by pabad-ap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int main (void)
 	robots[1] = new ScravTrap("Scravton");
 	ScravTrap *eli = dynamic_cast<ScravTrap*>(robots[1]);
 	robots[2] = new ScravTrap(*eli);
+	robots[2]->setName("Scrav II");
 	for (int i = 0; i < 3; i++)
 	{
 		std::cout << "\n------------------------------\n" << std::endl;
