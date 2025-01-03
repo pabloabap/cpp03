@@ -6,7 +6,7 @@
 #    By: pabad-ap <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/30 18:58:55 by pabad-ap          #+#    #+#              #
-#    Updated: 2025/01/03 09:08:32 by pabad-ap         ###   ########.fr        #
+#    Updated: 2025/01/03 09:33:09 by pabad-ap         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ CPP		= c++
 CPP_FLAGS	= -Wall -Wextra -Werror -std=c++98
 
 HEADERS		= ClapTrap.hpp ScravTrap.hpp FragTrap.hpp
-SRC		= main.cpp ClapTrap.cpp ScravTrap.cpp FragTrap.cpp
+MAIN		= main.cpp
+SRC		= $(MAIN) ClapTrap.cpp ScravTrap.cpp FragTrap.cpp
 OBJ		= $(SRC:.cpp=.o)
 
 all: $(NAME)
