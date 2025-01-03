@@ -6,11 +6,12 @@
 /*   By: pabad-ap <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 18:58:41 by pabad-ap          #+#    #+#             */
-/*   Updated: 2025/01/03 09:12:40 by pabad-ap         ###   ########.fr       */
+/*   Updated: 2025/01/03 12:13:34 by pabad-ap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include "ClapTrap.hpp"
 #include "ScravTrap.hpp"
 #include "FragTrap.hpp"
 

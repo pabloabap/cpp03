@@ -6,40 +6,41 @@
 /*   By: pabad-ap <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 18:58:41 by pabad-ap          #+#    #+#             */
-/*   Updated: 2025/01/03 12:13:15 by pabad-ap         ###   ########.fr       */
+/*   Updated: 2025/01/03 12:57:34 by pabad-ap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "ClapTrap.hpp"
 #include "ScravTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 static void	genericFunctions( ClapTrap *robot );
 static void	scravFunctions( ScravTrap *robot );
+static void	fragFunctions( FragTrap *robot );
+static void	diamFunctions( DiamondTrap *robot );
 
 int main (void) 
 {
-	ClapTrap *robots[3];
-	robots[0] = new ClapTrap("Clapton");
-	robots[1] = new ScravTrap("Scravton");
-	ScravTrap *eli = dynamic_cast<ScravTrap*>(robots[1]);
-	robots[2] = new ScravTrap(*eli);
-	robots[2]->setName("Scrav II");
-	for (int i = 0; i < 3; i++)
+	ClapTrap *robots[2];
+	robots[0] = new DiamondTrap("Diamond");
+	DiamondTrap *dan = dynamic_cast<DiamondTrap*>(robots[0]);
+	robots[1] = new DiamondTrap(*dan);
+	robots[1]->setName("Diamond II");
+	for (int i = 0; i < 2; i++)
 	{
 		std::cout << "\n------------------------------\n" << std::endl;
 		genericFunctions(robots[i]);
-	}
-	std::cout << "\n------------------------------\n" << std::endl;
-	for (int i = 1; i < 3; i++)
-	{
-		std::cout << "\n------------------------------\n" << std::endl;
 		scravFunctions(dynamic_cast<ScravTrap*>(robots[i]));
+		fragFunctions(dynamic_cast<FragTrap*>(robots[i]));
+		diamFunctions(dynamic_cast<DiamondTrap*>(robots[i]));
 	}
 	std::cout << "\n------------------------------\n" << std::endl;
-	delete robots[0];
-	delete robots[1];
-	delete robots[2];
+	for (int i = 0; i < 2; i++)
+	{
+		delete robots[i];
+	}
 	return (0);
 }
 
@@ -69,3 +70,32 @@ static void	scravFunctions( ScravTrap *robot )
 	std::cout << "|- Attack Damage: " << robot->getAttackDamage() << std::endl;
 }
 
+static void	fragFunctions( FragTrap *robot )
+{
+	std::cout << "___FRAGTRAP INVOCATIONS___" << std::endl;
+	std::cout << "|- Name: " << robot->getName() << std::endl;
+//	robot->guardGate();
+	robot->highFivesGuys();
+	robot->attack("noone");
+	robot->takeDamage( 1 );
+	robot->beRepaired( 1 );
+	std::cout << "|- Hit points: " << robot->getHitPoints() << std::endl;
+	std::cout << "|- Energy: " << robot->getEnergy() << std::endl;
+	std::cout << "|- Attack Damage: " << robot->getAttackDamage() << std::endl;
+}
+
+static void	diamFunctions( DiamondTrap *robot )
+{
+	std::cout << "___DIAMOND INVOCATIONS___" << std::endl;
+	std::cout << "|- Name: " << robot->getName() << std::endl;
+	robot->guardGate();
+	robot->highFivesGuys();
+	robot->attack("noone");
+	robot->whoAmI();
+	robot->attack("noone");
+	robot->takeDamage( 1 );
+	robot->beRepaired( 1 );
+	std::cout << "|- Hit points: " << robot->getHitPoints() << std::endl;
+	std::cout << "|- Energy: " << robot->getEnergy() << std::endl;
+	std::cout << "|- Attack Damage: " << robot->getAttackDamage() << std::endl;
+}
