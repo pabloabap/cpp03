@@ -16,7 +16,7 @@
 
 ScavTrap::ScavTrap(void): ClapTrap()
 {
-	this->_name = "Undefined";
+	ClapTrap::setLastClass(SCAVTRAP);
 	this->_hit_points = 100;
 	this->_energy = 50;
 	this->_attack_damage = 20;
@@ -25,6 +25,7 @@ ScavTrap::ScavTrap(void): ClapTrap()
 
 ScavTrap::ScavTrap( std::string name ): ClapTrap(name)
 {
+	ClapTrap::setLastClass(SCAVTRAP);
 	this->_hit_points = 100;
 	this->_energy = 50;
 	this->_attack_damage= 20;

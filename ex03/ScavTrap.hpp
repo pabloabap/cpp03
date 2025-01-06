@@ -24,7 +24,7 @@ class ScavTrap: virtual public ClapTrap
 		ScavTrap( ScavTrap const & src ); //Copy constructor
 		~ScavTrap(void); //Default destructor
 
-		ScavTrap &operator=( ScavTrap const &src); //Copy assignment operator.
+		ScavTrap	&operator=( ScavTrap const &src); //Copy assignment operator.
 			
 		void		attack( const std::string& target );
 		void		guardGate( void );

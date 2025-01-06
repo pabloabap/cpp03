@@ -17,18 +17,18 @@
 DiamondTrap::DiamondTrap(void): ClapTrap("Undefined_clap_name")
 {
 	this->_name = "Undefined";
-	this->_hit_points = FragTrap::_hit_points;
-	this->_energy = ScavTrap::_energy;
-	this->_attack_damage = FragTrap::_attack_damage;
+	//this->_hit_points = FragTrap::_hit_points;
+	//this->_energy = ScavTrap::_energy;
+	//this->_attack_damage = FragTrap::_attack_damage;
 	std::cout << "DiamondTrap - Default constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap( std::string name ): ClapTrap(name + "_clap_name")
 {
 	this->_name = name;
-	this->_hit_points = FragTrap::_hit_points;
-	this->_energy = ScavTrap::_energy;
-	this->_attack_damage = FragTrap::_attack_damage;
+	//this->_hit_points = FragTrap::_hit_points;
+	//this->_energy = ScavTrap::_energy;
+	//this->_attack_damage = FragTrap::_attack_damage;
 	std::cout << "DiamondTrap - Named constructor called" << std::endl;
 }
 
@@ -71,7 +71,8 @@ void	DiamondTrap::attack( const std::string &target )
 
 std::string	DiamondTrap::getName( void ) const
 {
-	return ( this->_name );
+	return ( this->_name ); //Redefining the behaviour of getName of DiamondTrap objects.
+	//return ( ClapTrap::_name ); //Option if it is wanted to return ClapTrap::_name attribute.
 }
 
 void		DiamondTrap::setName( std::string name )

@@ -14,16 +14,19 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
+int	ClapTrap::_last_class = CLAPTRAP;
+
 ClapTrap::ClapTrap(void): _name("Undefined"), _hit_points(10), \
 	_energy(10), _attack_damage(0)
-
 {
+	ClapTrap::setLastClass(CLAPTRAP);
 	std::cout << "ClapTrap - Default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap( std::string name ): _name(name), _hit_points(10), \
 	_energy(10), _attack_damage(0)
 {
+	ClapTrap::setLastClass(CLAPTRAP);
 	std::cout << "ClapTrap - Named constructor called" << std::endl;
 }
 
@@ -152,4 +155,14 @@ void		ClapTrap::setEnergy( int amount )
 void		ClapTrap::setAttackDamage( int amount )
 {
 	this->_attack_damage = amount;
+}
+
+int			ClapTrap::getLastClass(void)
+{
+	return(ClapTrap::_last_class);
+}
+
+void			ClapTrap::setLastClass(int last)
+{
+	ClapTrap::_last_class = last;
 }

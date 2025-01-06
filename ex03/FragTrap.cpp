@@ -16,18 +16,23 @@
 
 FragTrap::FragTrap(void): ClapTrap()
 {
-	this->_name = "Undefined";
 	this->_hit_points = 100;
-	this->_energy = 100;
+	std::cout << "FRAG " << ClapTrap::getLastClass() << std::endl;
+	if (ClapTrap::getLastClass() == CLAPTRAP)
+		this->_energy = 100;
 	this->_attack_damage = 30;
+	ClapTrap::setLastClass(FRAGTRAP);
 	std::cout << "FragTrap - Default constructor called" << std::endl;
 }
 
 FragTrap::FragTrap( std::string name ): ClapTrap(name)
 {
 	this->_hit_points = 100;
-	this->_energy = 100;
+	std::cout << "FRAG " << ClapTrap::getLastClass() << std::endl;
+	if (ClapTrap::getLastClass() == CLAPTRAP)
+		this->_energy = 100;
 	this->_attack_damage= 30;
+	ClapTrap::setLastClass(FRAGTRAP);
 	std::cout << "FragTrap - Named constructor called" << std::endl;
 }
 

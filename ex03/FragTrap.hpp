@@ -24,7 +24,7 @@ class FragTrap: virtual public ClapTrap
 		FragTrap( FragTrap const & src ); //Copy constructor
 		~FragTrap(void); //Default destructor
 
-		FragTrap &operator=( FragTrap const &src); //Copy assignment operator.
+		FragTrap	&operator=( FragTrap const &src); //Copy assignment operator.
 			
 		void		highFivesGuys( void );
 };
