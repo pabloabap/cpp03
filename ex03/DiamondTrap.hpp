@@ -14,10 +14,10 @@
 # define DIAMONDTRAP_CLASS_HPP
 
 # include <string>
-# include "ScravTrap.hpp"
+# include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 
-class DiamondTrap: public ScravTrap, public FragTrap
+class DiamondTrap: public ScavTrap, public FragTrap
 {
 	public:
 		DiamondTrap(void); //Default constructor

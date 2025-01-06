@@ -12,17 +12,17 @@
 
 #include <iostream>
 #include "ClapTrap.hpp"
-#include "ScravTrap.hpp"
+#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
 static void	genericFunctions( ClapTrap &robot );
-static void	scravFunctions( ScravTrap &robot );
+static void	scavFunctions( ScavTrap &robot );
 static void	fragFunctions( FragTrap &robot );
 
 int main (void) 
 {
 	ClapTrap c("Clapton");
-	ScravTrap s("Scrav II");
+	ScavTrap s("Scav II");
 	FragTrap f("Fragton");
 	
 	std::cout << "\n------------------------------\n" << std::endl;
@@ -32,7 +32,7 @@ int main (void)
 	std::cout << "\n------------------------------\n" << std::endl;
 	genericFunctions(f);
 	std::cout << "\n------------------------------\n" << std::endl;
-	scravFunctions(s);
+	scavFunctions(s);
 	std::cout << "\n------------------------------\n" << std::endl;
 	fragFunctions(f);
 	std::cout << "\n------------------------------\n" << std::endl;
@@ -52,9 +52,9 @@ static void	genericFunctions( ClapTrap &robot )
 	robot.beRepaired( 1 );
 }
 
-static void	scravFunctions( ScravTrap &robot )
+static void	scavFunctions( ScavTrap &robot )
 {
-	std::cout << "___SCRAVTRAP INVOCATIONS___" << std::endl;
+	std::cout << "___SCAVTRAP INVOCATIONS___" << std::endl;
 	std::cout << "|- Name: " << robot.getName() << std::endl;
 	robot.guardGate();
 	robot.attack("noone");

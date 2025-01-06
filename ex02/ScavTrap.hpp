@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScravTrap.hpp                                      :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pabad-ap <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,21 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCRAVTRAP_CLASS_HPP
-# define SCRAVTRAP_CLASS_HPP
+#ifndef SCAVTRAP_CLASS_HPP
+# define SCAVTRAP_CLASS_HPP
 
 # include <string>
 # include "ClapTrap.hpp"
 
-class ScravTrap: public ClapTrap
+class ScavTrap: public ClapTrap
 {
 	public:
-		ScravTrap(void); //Default constructor
-		ScravTrap(std::string name);
-		ScravTrap( ScravTrap const & src ); //Copy constructor
-		~ScravTrap(void); //Default destructor
+		ScavTrap(void); //Default constructor
+		ScavTrap(std::string name);
+		ScavTrap( ScavTrap const & src ); //Copy constructor
+		~ScavTrap(void); //Default destructor
 
-		ScravTrap &operator=( ScravTrap const &src); //Copy assignment operator.
+		ScavTrap &operator=( ScavTrap const &src); //Copy assignment operator.
 			
 		void		attack( const std::string& target );
 		void		guardGate( void );

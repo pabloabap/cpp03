@@ -12,21 +12,21 @@
 
 #include <iostream>
 #include "ClapTrap.hpp"
-#include "ScravTrap.hpp"
+#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
 static void	genericFunctions( ClapTrap *robot );
-static void	scravFunctions( ScravTrap *robot );
+static void	scavFunctions( ScavTrap *robot );
 static void	fragFunctions( FragTrap *robot );
 
 int main (void) 
 {
 	ClapTrap *robots[5];
 	robots[0] = new ClapTrap("Clapton");
-	robots[1] = new ScravTrap("Scravton");
-	ScravTrap *eli = dynamic_cast<ScravTrap*>(robots[1]);
-	robots[2] = new ScravTrap(*eli);
-	robots[2]->setName("Scrav II");
+	robots[1] = new ScavTrap("Scavton");
+	ScavTrap *eli = dynamic_cast<ScavTrap*>(robots[1]);
+	robots[2] = new ScavTrap(*eli);
+	robots[2]->setName("Scav II");
 	robots[3] = new FragTrap("Fragton");
 	FragTrap *fran = dynamic_cast<FragTrap*>(robots[3]);
 	robots[4] = new FragTrap(*fran);
@@ -40,7 +40,7 @@ int main (void)
 	for (int i = 1; i < 3; i++)
 	{
 		std::cout << "\n------------------------------\n" << std::endl;
-		scravFunctions(dynamic_cast<ScravTrap*>(robots[i]));
+		scavFunctions(dynamic_cast<ScavTrap*>(robots[i]));
 	}
 	std::cout << "\n------------------------------\n" << std::endl;
 	for (int i = 3; i < 5; i++)
@@ -70,9 +70,9 @@ static void	genericFunctions( ClapTrap *robot )
 	robot->beRepaired( 1 );
 }
 
-static void	scravFunctions( ScravTrap *robot )
+static void	scavFunctions( ScavTrap *robot )
 {
-	std::cout << "___SCRAVTRAP INVOCATIONS___" << std::endl;
+	std::cout << "___SCAVTRAP INVOCATIONS___" << std::endl;
 	std::cout << "|- Name: " << robot->getName() << std::endl;
 	robot->guardGate();
 	robot->attack("noone");

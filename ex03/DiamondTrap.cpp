@@ -18,7 +18,7 @@ DiamondTrap::DiamondTrap(void): ClapTrap("Undefined_clap_name")
 {
 	this->_name = "Undefined";
 	this->_hit_points = FragTrap::_hit_points;
-	this->_energy = ScravTrap::_energy;
+	this->_energy = ScavTrap::_energy;
 	this->_attack_damage = FragTrap::_attack_damage;
 	std::cout << "DiamondTrap - Default constructor called" << std::endl;
 }
@@ -27,12 +27,12 @@ DiamondTrap::DiamondTrap( std::string name ): ClapTrap(name + "_clap_name")
 {
 	this->_name = name;
 	this->_hit_points = FragTrap::_hit_points;
-	this->_energy = ScravTrap::_energy;
+	this->_energy = ScavTrap::_energy;
 	this->_attack_damage = FragTrap::_attack_damage;
 	std::cout << "DiamondTrap - Named constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap( DiamondTrap const &src ): ClapTrap(src), ScravTrap(src), FragTrap(src)
+DiamondTrap::DiamondTrap( DiamondTrap const &src ): ClapTrap(src), ScavTrap(src), FragTrap(src)
 
 {
 	std::cout << "DiamondTrap - Copy constructor called" << std::endl;
@@ -51,7 +51,7 @@ DiamondTrap &DiamondTrap::operator=( DiamondTrap const &src)
 		ClapTrap::_name = src._name + "_clap_name";
 		this->_name = src._name;
 		this->_hit_points = FragTrap::_hit_points;
-		this->_energy = ScravTrap::_energy;
+		this->_energy = ScavTrap::_energy;
 		this->_attack_damage = FragTrap::_attack_damage;
 	}
 	std::cout << "DiamondTrap - Copy assignment operator called" << std::endl;
@@ -66,7 +66,7 @@ void	DiamondTrap::whoAmI( void )
 
 void	DiamondTrap::attack( const std::string &target )
 {
-	ScravTrap::attack( target );
+	ScavTrap::attack( target );
 }
 
 std::string	DiamondTrap::getName( void ) const

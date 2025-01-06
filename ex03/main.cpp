@@ -12,12 +12,12 @@
 
 #include <iostream>
 #include "ClapTrap.hpp"
-#include "ScravTrap.hpp"
+#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
 
 static void	genericFunctions( ClapTrap *robot );
-static void	scravFunctions( ScravTrap *robot );
+static void	scavFunctions( ScavTrap *robot );
 static void	fragFunctions( FragTrap *robot );
 static void	diamFunctions( DiamondTrap *robot );
 
@@ -32,7 +32,7 @@ int main (void)
 	{
 		std::cout << "\n------------------------------\n" << std::endl;
 		genericFunctions(robots[i]);
-		scravFunctions(dynamic_cast<ScravTrap*>(robots[i]));
+		scavFunctions(dynamic_cast<ScavTrap*>(robots[i]));
 		fragFunctions(dynamic_cast<FragTrap*>(robots[i]));
 		diamFunctions(dynamic_cast<DiamondTrap*>(robots[i]));
 	}
@@ -57,9 +57,9 @@ static void	genericFunctions( ClapTrap *robot )
 	robot->beRepaired( 1 );
 }
 
-static void	scravFunctions( ScravTrap *robot )
+static void	scavFunctions( ScavTrap *robot )
 {
-	std::cout << "___SCRAVTRAP INVOCATIONS___" << std::endl;
+	std::cout << "___SCAVTRAP INVOCATIONS___" << std::endl;
 	std::cout << "|- Name: " << robot->getName() << std::endl;
 	robot->guardGate();
 	robot->attack("noone");

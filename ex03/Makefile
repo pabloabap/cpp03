@@ -14,9 +14,9 @@ NAME		= DiamondTrap
 CPP		= c++
 CPP_FLAGS	= -Wall -Wextra -Werror -std=c++98
 
-HEADERS		= ClapTrap.hpp ScravTrap.hpp FragTrap.hpp DiamondTrap.hpp
+HEADERS		= ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 MAIN		= main.cpp
-SRC		= $(MAIN) ClapTrap.cpp ScravTrap.cpp FragTrap.cpp DiamondTrap.cpp
+SRC		= $(MAIN) ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJ		= $(SRC:.cpp=.o)
 
 all: $(NAME)
